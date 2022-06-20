@@ -1,3 +1,3 @@
 <?php echo "Nyoba git";?>
 
-<?php echo "Hello word";?>
+<?php echo "Hello world";?>
