@@ -28,6 +28,13 @@ class prosesCrud {
         $row->execute();
         return $hasil = $row->fetchAll();
     }
+    
+    function tampil_data_mhs()
+    {
+        $row = $this->db->prepare("SELECT mahasiswa.nama, mahasiswa.nim, mahasiswa.semester, prodi.nama_prodi FROM mahasiswa INNER JOIN prodi ON prodi.id_prodi=mahasiswa.id_prodi;");
+        $row->execute();
+        return $hasil = $row->fetchAll();
+    }
 
     // variable $tabel adalah isi dari nama table database yang ingin ditampilkan
     // variable where adalah isi kolom tabel yang mau diambil
