@@ -26,7 +26,38 @@
 								</div>
 								<div class="form-group">
 									<label>Prodi</label>
-									<input type="harga" value="" class="form-control" name="prodi">
+									<select name="prodi">
+         <br>
+			<?php
+  
+			// Connect to database 
+			$con = mysqli_connect("localhost","root","","app_web");
+			  
+			// mysqli_connect("servername","username","password","database_name")
+		   
+			// Get all the categories from category table
+			$sql = "SELECT * FROM `prodi`";
+			$all_categories = mysqli_query($con,$sql);
+                // use a while loop to fetch data 
+                // from the $all_categories variable 
+                // and individually display as an option
+                while ($category = mysqli_fetch_array(
+                        $all_categories,MYSQLI_ASSOC)):; 
+            ?>
+                <option value="<?php echo $category["id_prodi"];
+                    // The value we usually set is the primary key
+                ?>">
+                    <?php echo $category["nama_prodi"];
+                        // To show the category name to the user
+                    ?>
+                </option>
+            <?php 
+                endwhile; 
+                // While loop must be terminated
+            ?>
+        </select>
+									
+
 								</div>
 								<button class="btn btn-primary btn-md" name="create"><i class="fa fa-plus"> </i> Tambah Data</button>
 							</form>

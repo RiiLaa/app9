@@ -15,7 +15,7 @@
             'nama'	    =>$nama,
             'nim'		=>$nim,
             'semester'	=>$semester,
-            'prodi'		=>$prodi
+            'id_prodi'		=>$prodi
         );
         $proses->tambah_data($tabel,$data);
         echo '<script>alert("Tambah Mahasiswa Berhasil");window.location="../index.php?page=biodata"</script>';
