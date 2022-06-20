@@ -12,7 +12,8 @@ $hasil = $proses->tampil_data_id('prodi','id_prodi',$idGet);
             <br/>
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Edit Prodi</h4>
+                    <h4 class="card-title">Edit Program Studi</h4>
+                    <p>Ini adalah halaman untuk mengelola data program studi</p>
                 </div>
                 <div class="card-body">
                     <!-- form berfungsi mengirimkan data input
