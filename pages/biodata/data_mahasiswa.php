@@ -22,7 +22,7 @@
                 <tbody>
                 <?php
                 $no=1;
-                $hasil = $proses->tampil_data('mahasiswa');
+                $hasil = $proses->tampil_data_mhs();
                 foreach($hasil as $isi){
                     ?>
                     <tr>
@@ -30,7 +30,7 @@
                         <td><?php echo $isi['nama']?></td>
                         <td><?php echo $isi['nim'];?></td>
                         <td><?php echo $isi['semester'];?></td>
-                        <td><?php echo $isi['prodi'];?></td>
+                        <td><?php echo $isi['nama_prodi'];?></td>
                         <td style="text-align: center;">
                             <a href="index.php?page=ubah_mahasiswa&id=<?php echo $isi['id'];?>" class="btn btn-success btn-md">
                                 <span class="fa fa-edit"></span></a>
