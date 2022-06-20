@@ -8,23 +8,23 @@
 					<br/>
 					<div class="card">
 						<div class="card-header">
-						<h4 class="card-title">Tambah Prodi</h4>
+						<h4 class="card-title">Tambah Matakuliah</h4>
 						</div>
 						<div class="card-body">
-							<form action="proses/crud_prodi.php?aksi=tambah" method="POST">
+							<form action="proses/crud_matakuliah.php?aksi=tambah" method="POST">
 								<div class="form-group">
-									<label>Nama Prodi </label>
-									<input type="text" value="" class="form-control" name="nama_prodi">
+									<label>Nama Matakuliah </label>
+									<input type="text" value="" class="form-control" name="nama_matakuliah">
 								</div>
 								<div class="form-group">
-									<label>Jenjang</label>
-									<input type="text" value="" class="form-control" name="jenjang">
+									<label>Dosen_pengajar</label>
+									<input type="text" value="" class="form-control" name="dosen_pengajar">
 								</div>
 								<div class="form-group">
-									<label>Akreditasi</label>
-									<input type="harga" value="" class="form-control" name="akreditasi">
+									<label>Ruang_kuliah</label>
+									<input type="integer" value="" class="form-control" name="ruang_kuliah">
 								</div>
-								<button class="btn btn-primary btn-md" name="create"><i class="fa fa-plus"> </i> Tambah Data</button>
+								<button class="btn btn-primary btn-md" name="create"><i class="fa fa-plus"> </i> Tambah Data Matakuliah</button>
 							</form>
 						</div>
 					</div>

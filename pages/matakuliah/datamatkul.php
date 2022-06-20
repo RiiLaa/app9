@@ -1,7 +1,7 @@
 <div class="col-lg-12">
 
 
-    <a href="index.php?page=tambah_prodi" class="btn btn-success btn-md"><span class="fa fa-plus"></span> Tambah</a>
+    <a href="index.php?page=tambahmatkul" class="btn btn-success btn-md"><span class="fa fa-plus"></span> Tambah</a>
     <br/><br/>
     <div class="card">
         <div class="card-header">
@@ -12,27 +12,27 @@
                 <thead>
                 <tr>
                     <th width="50px">No</th>
-                    <th>Desain Web</th>
-                    <th>Pemrograman web</th>
-                    <th>Praktikum</th>
+                    <th>Nama Matakuliah</th>
+                    <th>Dosen Pengajar</th>
+                    <th>Ruang kuliah</th>
                     <th style="text-align: center;">Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php
                 $no=1;
-                $hasil = $proses->tampil_data('prodi');
+                $hasil = $proses->tampil_data('matakuliah');
                 foreach($hasil as $isi){
                     ?>
                     <tr>
                         <td><?php echo $no; ?></td>
-                        <td><?php echo $isi['desain_web']?></td>
-                        <td><?php echo $isi['pemrograman_web'];?></td>
-                        <td><?php echo $isi['praktikum'];?></td>
+                        <td><?php echo $isi['nama_matakuliah']?></td>
+                        <td><?php echo $isi['dosen_pengajar'];?></td>
+                        <td><?php echo $isi['ruang_kuliah'];?></td>
                         <td style="text-align: center;">
-                            <a href="index.php?page=ubah_prodi&id=<?php echo $isi['id_prodi'];?>" class="btn btn-success btn-md">
+                            <a href="index.php?page=ubahmatkul&id=<?php echo $isi['id'];?>" class="btn btn-success btn-md">
                                 <span class="fa fa-edit"></span></a>
-                            <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="proses/crud_prodi.php?aksi=hapus&hapusid=<?php echo $isi['id_prodi'];?>"
+                            <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="proses/crud_matakuliah.php?aksi=hapus&hapusid=<?php echo $isi['id'];?>"
                                class="btn btn-danger btn-md"><span class="fa fa-trash"></span></a>
                         </td>
                     </tr>

@@ -47,6 +47,15 @@ include('themes/header.php');
                                 case 'ubah_prodi';
                                     include 'pages/prodi/ubah_prodi.php';
                                     break;
+                                case 'matakuliah';
+                                    include 'pages/matakuliah/datamatkul.php';
+                                    break;
+                                case 'tambahmatkul';
+                                    include 'pages/matakuliah/tambahmatkul.php';
+                                    break;
+                                case 'ubahmatkul';
+                                    include 'pages/matakuliah/ubahmatkul.php';
+                                    break;
                             }
                         }else{
                             include "pages/beranda.php";
