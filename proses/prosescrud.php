@@ -28,12 +28,20 @@ class prosesCrud {
         $row->execute();
         return $hasil = $row->fetchAll();
     }
-    
-    function tampil_data_mhs()
+
+    //tampil data dari filter cari user
+    function cari_data($tabel,$cari)
     {
-        $row = $this->db->prepare("SELECT mahasiswa.nama, mahasiswa.nim, mahasiswa.semester, prodi.nama_prodi FROM mahasiswa INNER JOIN prodi ON prodi.id_prodi=mahasiswa.id_prodi;");
-        $row->execute();
-        return $hasil = $row->fetchAll();
+        if (isset($_POST['kata_cari'])){
+            $cari = $_POST ['kata_cari'];
+            $row = $this->db->prepare("SELECT * FROM $tabel where nama_pengguna like '%".$cari."%' or alamat like '%".$cari."%' ");
+            $row->execute();
+            return $hasil = $row->fetchAll();}
+        else {
+            $row = $this->db->prepare("SELECT * FROM $tabel");
+            $row->execute();
+            return $hasil = $row->fetchAll();
+        }
     }
 
     // variable $tabel adalah isi dari nama table database yang ingin ditampilkan

@@ -7,6 +7,11 @@
         <div class="card-header">
             <h4 class="card-title">Data User</h4>
         </div>
+        <form method="post" action="index.php?page=data_user">
+            <label>Search</label>
+            <input type="text" name="kata_cari">
+            <button type="submit" name="Searching">Cari</button>
+        </form>
         <div class="card-body">
             <table class="table table-hover table-bordered" id="mytable" style="margin-top: 10px">
                 <thead>
@@ -24,7 +29,13 @@
                 <tbody>
                 <?php
                 $no=1;
-                $hasil = $proses->tampil_data('tbl_user');
+                
+                if (isset($_POST['kata_cari'])){
+                    $cari=$_POST['kata_cari'];
+                    $hasil = $proses->cari_data('tbl_user',$cari);}
+                else {
+                    $hasil = $proses->cari_data('tbl_user','%');}
+
                 foreach($hasil as $isi){
                     ?>
                     <tr>
